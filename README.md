@@ -7,3 +7,4 @@ YouTube sometimes removes useful features, one such being the playlist duration.
 https://chrome.google.com/webstore/detail/youtube-playlist-duration/ijppgifnllaehojnpbphigenojfjnhml?hl=en-US
 
 #License
+<a href="https://github.com/sridhama/YouTube-Playlist-Duration/blob/master/LICENSE">MIT</a>
