@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+
+  "name": "YouTube Playlist Duration",
+  "description": "This extension restores the handy playlist length feature that has been deprecated by YouTube.",
+  "version": "2.0",
+
+	"icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png" },
+
+	"content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/playlist*"],
+      "js": ["app.js"],
+	"run_at": "document_end"
+    }
+  ],
+
+  "permissions": [
+    "tabs", "https://www.youtube.com/playlist*"
+  ]
+
+}
