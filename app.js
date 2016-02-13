@@ -1,16 +1,11 @@
-//Cheap URL search
-//var docurl = window.location.href;
-//if(docurl.toLowerCase().indexOf("playlist") >= 0){
 function getDuration() {
-var timeStamp = document.querySelectorAll('.timestamp span');
-var totalDurationInSeconds = 0;
-var totalDuration,
+var timeStamp = document.querySelectorAll('.timestamp span'),
+	totalDurationInSeconds = 0,
+	totalDuration,
 	totalHours,
 	totalMinutes,
 	totalSeconds;
-
 //Runs the loop and fetches the total duration in seconds
-
 for (var i = 0; i < timeStamp.length; i++){
 	var timeString = timeStamp[i].innerHTML;
 	var HMS = timeString.split(':');
@@ -31,7 +26,6 @@ for (var i = 0; i < timeStamp.length; i++){
 	}
 	
 }
-
 //Converting Seconds to HH MM SS
 function secondsToHMS(d) {
 d = Number(d);
@@ -46,7 +40,7 @@ totalDuration = secondsToHMS(totalDurationInSeconds);
 }
 	var parentElement = document.getElementById('masthead-appbar-container');
 	var firstChildElement = parentElement.firstChild;
-//Create Div and style it
+//Create div and style it
 	function createDiv(){	
 	var timeStampDiv = document.createElement("div");
 	var HMSDuration = getDuration();	
@@ -54,7 +48,6 @@ totalDuration = secondsToHMS(totalDurationInSeconds);
 	var headerPara = document.createElement("p");
 	var headerText = document.createTextNode("Playlist Duration");
 	var durationSpan = document.createElement("span");
-		
 	timeStampDiv.style.cssText = 'right: 0px; height: 32px;color: #767676; position: fixed; float: right; display: inline-block; z-index: 1; padding: 3px; text-align: center; border-radius: 2px; border-style: dotted; background-color: rgba(255, 255, 255, 0.74902);';
 	timeStampDiv.onclick=function(){
 	timeStampDiv.style.display = "none";
@@ -67,11 +60,10 @@ totalDuration = secondsToHMS(totalDurationInSeconds);
 	parentElement.insertBefore(timeStampDiv, firstChildElement);
 	}
 	createDiv();
-//If "Load More" is clicked, run script function again
+//If "Load More" is clicked, recalculate and redraw
 function loadMore(){
 	var loadButton = document.querySelector('.load-more-button');
 	if(loadButton != undefined){
-
 			function replaceDiv(){
 			var firstChildElement = parentElement.firstChild;
 			parentElement.removeChild(firstChildElement);
@@ -79,9 +71,9 @@ function loadMore(){
 			//callback
 			loadMore();
 			}
+	//Time-based function execution
 	loadButton.addEventListener("click", function(){setTimeout(replaceDiv, 2000)});
 	};
 	return;
 }
 loadMore();
- 
