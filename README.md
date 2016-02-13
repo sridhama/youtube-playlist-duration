@@ -6,7 +6,7 @@ YouTube sometimes removes useful features, one such being the playlist duration.
 #Features
 <ul>
 <li>Works for playlists consisting of more than 100 videos. Click the "Load More" to refresh the counter.</li>
-<li>Click on duration box to hide it.</li>
+<li>Unobtrusive positioning. Click on duration box to hide it.</li>
 </ul>
 
 #Known Issues
