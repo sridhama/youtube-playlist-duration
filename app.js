@@ -14,7 +14,7 @@ for (var i = 0; i < timeStamp.length; i++){
 		minutes = parseInt(HMS[1]),
 		seconds = parseInt(HMS[2]),
 		totalLoopSeconds = hours*3600 + minutes*60 + seconds;
-		totalDurationInSeconds += totalLoopSeconds;	
+		totalDurationInSeconds += totalLoopSeconds;
 	}
 	else{
 	var
@@ -24,7 +24,7 @@ for (var i = 0; i < timeStamp.length; i++){
 
 		totalDurationInSeconds += totalLoopSeconds;
 	}
-	
+
 }
 //Converting Seconds to HH MM SS
 function secondsToHMS(d) {
@@ -41,9 +41,9 @@ totalDuration = secondsToHMS(totalDurationInSeconds);
 	var parentElement = document.getElementById('masthead-appbar-container');
 	var firstChildElement = parentElement.firstChild;
 //Create div and style it
-	function createDiv(){	
+	function createDiv(){
 	var timeStampDiv = document.createElement("div");
-	var HMSDuration = getDuration();	
+	var HMSDuration = getDuration();
 	var textNodeText = document.createTextNode(HMSDuration);
 	var headerPara = document.createElement("p");
 	var headerText = document.createTextNode("Playlist Duration");
@@ -72,7 +72,17 @@ function loadMore(){
 			loadMore();
 			}
 	//Time-based function execution
-	loadButton.addEventListener("click", function(){setTimeout(replaceDiv, 2000)});
+	loadButton.addEventListener("click", function(){
+		var docHeightNew = body.scrollHeight;
+		intervalVar = setInterval(function(){
+		var docHeightOld = body.scrollHeight;
+			if(docHeightOld != docHeightNew){
+				replaceDiv();
+				clearInterval(intervalVar);
+			}	
+		}, 50);
+		
+	});
 	};
 	return;
 }
