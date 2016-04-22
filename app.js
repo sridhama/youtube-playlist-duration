@@ -1,3 +1,21 @@
+//Clicks the 'Load More' button
+function loadMore() {
+    loadButton = document.querySelector('.load-more-button');
+    if(loadButton != undefined) {
+        loadButton.click();
+        window.scrollTo(0,0);
+    }
+    else {
+        clearInterval(callback);
+        proceed();
+    }
+    return;
+}
+//Load the entire playlist by clicking the 'Load More' button repeatedly
+var loadButton;
+var callback = setInterval(loadMore, 250);
+
+function proceed() {
 function getDuration() {
     var timeStamp = document.querySelectorAll('.timestamp span'),
         totalDurationInSeconds = 0,
@@ -55,30 +73,4 @@ function createDiv(){
 }
 
 createDiv();
-
-//If "Load More" is clicked, recalculate and redraw
-function loadMore(){
-    var loadButton = document.querySelector('.load-more-button');
-    if(loadButton != undefined) {
-        function replaceDiv() {
-            var firstChildElement = parentElement.firstChild;
-            parentElement.removeChild(firstChildElement);
-            createDiv();
-            //callback
-            loadMore();
-        }
-        //Time-based function execution
-        loadButton.addEventListener("click", function() {
-            var docHeightNew = body.scrollHeight;
-            intervalVar = setInterval(function() {
-                var docHeightOld = body.scrollHeight;
-                if(docHeightOld != docHeightNew) {
-                    replaceDiv();
-                    clearInterval(intervalVar);
-                }
-            }, 50);
-        });
-    };
-    return;
-}
-loadMore();
+};
