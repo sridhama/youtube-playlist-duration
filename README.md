@@ -3,7 +3,7 @@ YouTube Playlist Duration unobtrusively displays the total duration of YouTube p
 
 ## Features
 <ul>
-<li>Works for playlists consisting of more than 100 videos. Click on "Load More" to refresh the counter.</li>
+<li>Works with playlists consisting of more than 100 videos. Just click on "Load More" to refresh the counter.</li>
 <li>Unobtrusive positioning. Click on the duration box to hide it.</li>
 </ul>
 
