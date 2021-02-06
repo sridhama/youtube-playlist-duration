@@ -24,6 +24,9 @@ function getDuration() {
     for (var i = 0; i < timeStamp.length; i++) {
         var timeString = timeStamp[i].innerHTML;
         var HMS = timeString.split(':');
+        if (HMS.length) === 1)
+            continue;
+        
         if(HMS.length === 3) {
             hours   = parseInt(HMS[0]);
             minutes = parseInt(HMS[1]);
