@@ -4,8 +4,8 @@
       "matches": [ "https://www.youtube.com/playlist?list=*" ],
       "run_at": "document_end"
    } ],
-   "description": "Calculate the duration of YouTube playlists",
-   "homepage_url": "https://github.com/sridhama/youtube-playlist-duration", 
+   "description": "View the duration of YouTube playlists",
+   "homepage_url": "https://github.com/sridhama/youtube-playlist-duration",
    "icons": {
       "128": "icon128.png",
       "16": "icon16.png",
@@ -13,5 +13,5 @@
    },
    "manifest_version": 2,
    "name": "YouTube Playlist Duration",
-   "version": "3.1.4"
+   "version": "3.1.6"
 }
